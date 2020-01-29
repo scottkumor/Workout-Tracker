@@ -1,13 +1,14 @@
 const router = require('express').Router();
-const Workout = require('./../models/workout');
-const db = require("./../models/workout");
+const path = require("path");
 
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/excercise", function(req, res) {
-   // 
-  });
+router.get("/exercise", function (req, res) {
+  res.sendFile(path.join(__dirname, "./../public/exercise.html"));
+});
 
-  router.get("/stats", function(req, res) {
-    // 
-   });
+router.get("/stats", function (req, res) {
+  res.sendFile(path.join(__dirname, "./../public/stats.html"));
+});
+
+module.exports = router;
